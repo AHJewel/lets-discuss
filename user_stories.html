@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Discuss - User Stories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Print Styles for seamless PDF saving */
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .shadow-xl, .shadow-sm { box-shadow: none !important; border-color: #e5e7eb; }
+            .overflow-x-auto { overflow: visible !important; }
+            table { page-break-inside: auto; }
+            tr { page-break-inside: avoid; page-break-after: auto; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased p-4 md:p-8">
+
+    <main class="max-w-7xl mx-auto bg-white shadow-xl rounded-2xl border border-slate-200 overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-indigo-700 px-6 py-8 md:px-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-2">User Stories Repository</h1>
+                <h2 class="text-lg text-indigo-200 font-medium flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Project: Lets Discuss &bull; Total: 50 Stories
+                </h2>
+            </div>
+            <button onclick="window.print()" class="no-print bg-white text-indigo-700 hover:bg-indigo-50 px-5 py-2.5 rounded-lg font-semibold transition-colors shadow-sm flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                Print / Save PDF
+            </button>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead class="bg-slate-100 border-b-2 border-slate-200 sticky top-0 z-10 text-slate-700 text-sm font-bold uppercase tracking-wider">
+                    <tr>
+                        <th class="px-4 py-4 w-16 text-center">ID</th>
+                        <th class="px-4 py-4 w-40">Role (As a...)</th>
+                        <th class="px-4 py-4 w-1/3">Action (I want to...)</th>
+                        <th class="px-4 py-4 w-1/3">Benefit (So that...)</th>
+                        <th class="px-4 py-4 w-24">Priority</th>
+                        <th class="px-4 py-4 w-28">Phase</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 text-sm">
+                    
+                    <!-- Authentication & Roles -->
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-01</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">Guest</td>
+                        <td class="px-4 py-3">register for a new account</td>
+                        <td class="px-4 py-3">I can become a registered User and track my groups.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-02</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">log in using my credentials securely</td>
+                        <td class="px-4 py-3">I can access my personal dashboard and group posts.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-03</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">assign the "Verified User" role to standard users</td>
+                        <td class="px-4 py-3">I can grant trusted users advanced platform capabilities.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-04</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">revoke the "Verified User" role</td>
+                        <td class="px-4 py-3">I can demote users who violate platform guidelines.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    
+                    <!-- Post Creation & Constraints -->
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-05</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">Guest</td>
+                        <td class="px-4 py-3">create a basic text post anonymously (with captcha)</td>
+                        <td class="px-4 py-3">I can share public thoughts without making an account.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-06</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">create a public text post</td>
+                        <td class="px-4 py-3">I can start a discussion on the main platform feed.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-07</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">attach up to 4 images to my text post</td>
+                        <td class="px-4 py-3">I can provide visual context to my discussions.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-08</td>
+                        <td class="px-4 py-3 font-medium text-slate-500">System</td>
+                        <td class="px-4 py-3">reject post submissions with more than 4 images</td>
+                        <td class="px-4 py-3">the platform strictly enforces storage and layout constraints.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-09</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">set my post visibility to "Restricted"</td>
+                        <td class="px-4 py-3">I can limit who is allowed to view my content.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-10</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">disable comments entirely on my own post</td>
+                        <td class="px-4 py-3">I can make an announcement without opening a discussion.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-11</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">restrict who is allowed to comment on my post</td>
+                        <td class="px-4 py-3">I can control the narrative and prevent spam.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-12</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">edit the text of my own post</td>
+                        <td class="px-4 py-3">I can fix typos or clarify my statement later.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-13</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">delete my own post</td>
+                        <td class="px-4 py-3">I can permanently remove content I no longer want public.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-14</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">delete any user's post</td>
+                        <td class="px-4 py-3">I can moderate the platform and remove terms-of-service violations.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+
+                    <!-- Live Commenting & Replies -->
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-15</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">Guest</td>
+                        <td class="px-4 py-3">comment on a public post</td>
+                        <td class="px-4 py-3">I can participate in open discussions.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-16</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">reply directly to another user's comment</td>
+                        <td class="px-4 py-3">I can engage in nested, specific conversation threads.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-17</td>
+                        <td class="px-4 py-3 font-medium text-slate-500">System</td>
+                        <td class="px-4 py-3">broadcast new comments via WebSockets (Reverb)</td>
+                        <td class="px-4 py-3">connected clients receive data instantly.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-18</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">see new comments appear live without refreshing the page</td>
+                        <td class="px-4 py-3">I can have a fluid, chat-like discussion experience.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-19</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">edit my own comment</td>
+                        <td class="px-4 py-3">I can correct mistakes in my active discussions.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-20</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">delete my own comment</td>
+                        <td class="px-4 py-3">I can retract a statement I made.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-21</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">delete any user's comment on my own posts</td>
+                        <td class="px-4 py-3">I can moderate the discussion happening on my content.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-22</td>
+                        <td class="px-4 py-3 font-medium text-slate-500">System</td>
+                        <td class="px-4 py-3">broadcast comment deletions via WebSockets</td>
+                        <td class="px-4 py-3">viewing clients instantly remove the deleted comment from their DOM.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+
+                    <!-- Group Management -->
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-23</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">create a new custom Group</td>
+                        <td class="px-4 py-3">I can build a private community for specific discussions.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-24</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">create platform-wide official Groups</td>
+                        <td class="px-4 py-3">I can organize users into distinct channels.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-25</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">explicitly add a standard User to my Group</td>
+                        <td class="px-4 py-3">they gain visibility and access to the group's content.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-26</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">remove a User from my Group</td>
+                        <td class="px-4 py-3">I can revoke their access to the private group feed.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-27</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">view a list of all Groups I am a member of</td>
+                        <td class="px-4 py-3">I can easily navigate between my different communities.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-28</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">publish a post exclusively to a Group I own</td>
+                        <td class="px-4 py-3">the post is kept hidden from the public timeline.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-29</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">delete any Group</td>
+                        <td class="px-4 py-3">I can disband communities that violate rules.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+
+                    <!-- Visibility Rules -->
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-30</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">Guest</td>
+                        <td class="px-4 py-3">view the global public post feed</td>
+                        <td class="px-4 py-3">I can read general discussions on the platform.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-31</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">view a feed combining public posts and posts from my explicit groups</td>
+                        <td class="px-4 py-3">I see a unified timeline of all content relevant to me.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-32</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">see every single post on the platform regardless of group/restriction</td>
+                        <td class="px-4 py-3">I can perform full global moderation and oversight.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-33</td>
+                        <td class="px-4 py-3 font-medium text-slate-500">System</td>
+                        <td class="px-4 py-3">hide group posts from non-members at the API level</td>
+                        <td class="px-4 py-3">I ensure strict data privacy for group communications.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-34</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">receive an error when trying to view a restricted post I lack access to</td>
+                        <td class="px-4 py-3">privacy boundaries set by Verified Users are respected.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-35</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">Guest</td>
+                        <td class="px-4 py-3">not see group posts in the public timeline</td>
+                        <td class="px-4 py-3">the public feed remains clean and strictly for public discourse.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-36</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">report a post for violating guidelines</td>
+                        <td class="px-4 py-3">Admins can review and take action on malicious content.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-37</td>
+                        <td class="px-4 py-3 font-medium text-purple-700">Admin</td>
+                        <td class="px-4 py-3">suspend a User's account</td>
+                        <td class="px-4 py-3">I can prevent them from posting or commenting entirely.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-38</td>
+                        <td class="px-4 py-3 font-medium text-emerald-600">Verified User</td>
+                        <td class="px-4 py-3">transfer ownership of my group to another Verified User</td>
+                        <td class="px-4 py-3">I can hand over community management if I step down.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    
+                    <!-- Advanced Technical & Security (The required strict requirements) -->
+                    <tr class="hover:bg-red-50 transition-colors bg-red-50/30">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-39</td>
+                        <td class="px-4 py-3 font-medium text-red-600">Developer</td>
+                        <td class="px-4 py-3">implement strict Content Security Policy (CSP) headers</td>
+                        <td class="px-4 py-3">I can mitigate XSS risks and prevent unauthorized script execution.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-bold">Ph 4</span></td>
+                    </tr>
+                    <tr class="hover:bg-red-50 transition-colors bg-red-50/30">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-40</td>
+                        <td class="px-4 py-3 font-medium text-red-600">Developer</td>
+                        <td class="px-4 py-3">implement strict input sanitization on all post/comment data</td>
+                        <td class="px-4 py-3">I ensure XSS payloads are neutralized before hitting the database.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-blue-50 transition-colors bg-blue-50/30">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-41</td>
+                        <td class="px-4 py-3 font-medium text-blue-600">Frontend Dev</td>
+                        <td class="px-4 py-3">implement React component memoization (React.memo/useMemo) for the live comment feed</td>
+                        <td class="px-4 py-3">I minimize unnecessary DOM re-renders during rapid WebSocket updates, ensuring high performance.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-42</td>
+                        <td class="px-4 py-3 font-medium text-slate-700">Developer</td>
+                        <td class="px-4 py-3">configure database indexing on Group and User IDs</td>
+                        <td class="px-4 py-3">the complex visibility feed queries execute rapidly.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-bold">Ph 4</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-43</td>
+                        <td class="px-4 py-3 font-medium text-slate-700">Developer</td>
+                        <td class="px-4 py-3">eager load relationships (comments, author) in Laravel API responses</td>
+                        <td class="px-4 py-3">I prevent N+1 query bottlenecks on the main post feed.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-44</td>
+                        <td class="px-4 py-3 font-medium text-slate-700">QA Tester</td>
+                        <td class="px-4 py-3">run automated E2E tests on the Role-Based Access Control matrix</td>
+                        <td class="px-4 py-3">we guarantee standard users can never bypass restrictions.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-bold">Ph 4</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-45</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">view optimistic UI updates when I post a comment</td>
+                        <td class="px-4 py-3">the app feels instantly responsive before the server confirms.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-46</td>
+                        <td class="px-4 py-3 font-medium text-slate-500">System</td>
+                        <td class="px-4 py-3">compress and optimize user-uploaded images</td>
+                        <td class="px-4 py-3">the platform saves bandwidth and storage costs.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-bold">Med</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-47</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">click on an attached image in a post to expand it</td>
+                        <td class="px-4 py-3">I can view details in full resolution (lightbox).</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold">Ph 3</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-48</td>
+                        <td class="px-4 py-3 font-medium text-slate-700">Developer</td>
+                        <td class="px-4 py-3">setup rate limiting on the post and comment endpoints</td>
+                        <td class="px-4 py-3">I protect the platform from spam bots and DDoS attacks.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-49</td>
+                        <td class="px-4 py-3 font-medium text-slate-900">User</td>
+                        <td class="px-4 py-3">receive an email notification when someone replies to me</td>
+                        <td class="px-4 py-3">I am drawn back to the platform to continue the discussion.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">Low</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-bold">Ph 2</span></td>
+                    </tr>
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-4 py-3 text-center font-semibold text-slate-500">US-50</td>
+                        <td class="px-4 py-3 font-medium text-slate-700">DevOps</td>
+                        <td class="px-4 py-3">configure CI/CD pipelines for automated testing and deployment</td>
+                        <td class="px-4 py-3">we ensure smooth, tested rollouts to the production server.</td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">High</span></td>
+                        <td class="px-4 py-3"><span class="px-2 py-1 bg-slate-200 text-slate-800 rounded text-xs font-bold">Ph 5</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </main>
+    
+    <div class="text-center mt-6 text-sm text-slate-400 no-print">
+        End of User Stories Repository &bull; Document Version 1.0
+    </div>
+
+</body>
+</html>

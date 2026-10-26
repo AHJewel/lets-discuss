@@ -1,0 +1,157 @@
+name: lets-discuss
+
+x-php: &php
+  build:
+    context: ./docker/php
+  image: lets-discuss/php:8.4
+  working_dir: /var/www/html
+  volumes:
+    - ./lets-discuss-api:/var/www/html
+  environment:
+    XDEBUG_MODE: ${XDEBUG_MODE:-off}
+  extra_hosts:
+    - "host.docker.internal:host-gateway"
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  api:
+    <<: *php
+
+  queue:
+    <<: *php
+    command: php artisan queue:work --tries=3 --timeout=90
+
+  scheduler:
+    <<: *php
+    command: php artisan schedule:work
+
+  reverb:
+    <<: *php
+    command: php artisan reverb:start --host=0.0.0.0 --port=8080
+
+  nginx:
+    image: nginx:1.29-alpine
+    ports:
+      - "127.0.0.1:80:80"
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./lets-discuss-api:/var/www/html:ro
+    depends_on:
+      - api
+      - reverb
+      - web
+    restart: unless-stopped
+
+  web:
+    image: node:24-alpine
+    working_dir: /app
+    command: sh -c "npm install && npm run dev"
+    volumes:
+      - ./lets-discuss-web:/app
+      # Linux-native deps stay in the container; the host never sees them
+      - web-node-modules:/app/node_modules
+    restart: unless-stopped
+
+  e2e:
+    image: mcr.microsoft.com/playwright:v1.63.0-noble
+    profiles: [e2e]
+    working_dir: /app
+    ipc: host
+    environment:
+      E2E_HOST_RESOLVER_RULES: "MAP lets-discuss.localhost nginx, MAP api.lets-discuss.localhost nginx"
+    volumes:
+      - ./lets-discuss-web:/app
+      - web-node-modules:/app/node_modules
+    depends_on:
+      - nginx
+    command: npx playwright test
+
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: lets_discuss
+      POSTGRES_USER: lets_discuss
+      POSTGRES_PASSWORD: secret
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      # Postgres 18 images keep PGDATA under /var/lib/postgresql/18/docker
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lets_discuss -d lets_discuss"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:8-alpine
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  minio:
+    # Upstream MinIO no longer publishes images; pgsty/minio is a maintained community build
+    image: pgsty/minio:RELEASE.2026-08-04T00-00-00Z
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio-secret
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  minio-init:
+    image: pgsty/mc:RELEASE.2026-09-16T00-00-00Z
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 minio minio-secret &&
+      mc mb --ignore-existing local/lets-discuss &&
+      mc anonymous set download local/lets-discuss
+      "
+    restart: "no"
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "127.0.0.1:8025:8025"
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
+    ports:
+      - "127.0.0.1:8081:8080"
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:
+  web-node-modules:

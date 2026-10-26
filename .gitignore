@@ -1,0 +1,8 @@
+# The two applications are separate repositories
+/lets-discuss-api/
+/lets-discuss-web/
+
+.env
+
+# Local execution ledger
+/.superpowers/

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Discuss - Project Requirements</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .shadow-xl { box-shadow: none !important; border: 1px solid #e5e7eb; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased py-10 px-4 sm:px-8">
+
+    <main class="max-w-6xl mx-auto bg-white p-8 sm:p-12 shadow-xl rounded-2xl border border-slate-200">
+        
+        <div class="flex justify-between items-start border-b border-slate-200 pb-8 mb-10">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 tracking-tight mb-3">Project Requirements</h1>
+                <h2 class="text-2xl font-semibold text-slate-600 flex items-center gap-2">
+                    <svg class="w-6 h-6 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
+                    Lets Discuss
+                </h2>
+                <p class="text-sm text-slate-500 mt-2 font-medium uppercase tracking-wider">Version 2.0 &bull; Comprehensive Specification</p>
+            </div>
+            <button onclick="window.print()" class="no-print bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                Save as PDF
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-12">
+            <section class="lg:col-span-2 space-y-4">
+                <h3 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
+                    <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                    Project Overview
+                </h3>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    <strong>Lets Discuss</strong> is a robust, dynamic discussion platform and blog application. It is designed to facilitate secure and scalable conversations through text and multimedia posts, live comments, and nested replies. The platform is strictly organized across four distinct user tiers and supports private, group-based interactions alongside public forums.
+                </p>
+            </section>
+
+            <section class="bg-slate-50 p-6 rounded-xl border border-slate-100 h-fit">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                    <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                    Tech Stack
+                </h3>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-indigo-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                        <div><strong>Backend:</strong> Laravel API</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-blue-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div><strong>Frontend:</strong> React SPA</div>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <svg class="w-5 h-5 text-green-500 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div><strong>Real-time:</strong> WebSockets (Reverb/Pusher)</div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                User Roles & Permissions
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-slate-400"></div>
+                    <h4 class="font-bold text-lg text-slate-700 mb-3">1. Guest</h4>
+                    <ul class="list-disc pl-4 text-sm text-slate-600 space-y-2 marker:text-slate-400">
+                        <li>Can view all public posts.</li>
+                        <li>Can create posts (requires minimum data/captcha).</li>
+                        <li>Can comment on public posts (if allowed by author).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-blue-500"></div>
+                    <h4 class="font-bold text-lg text-slate-700 mb-3">2. User</h4>
+                    <ul class="list-disc pl-4 text-sm text-slate-600 space-y-2 marker:text-blue-500">
+                        <li>Inherits Guest permissions.</li>
+                        <li>Can view posts in groups they are explicitly added to.</li>
+                        <li><em>Cannot</em> create groups or restrict visibility.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
+                    <h4 class="font-bold text-lg text-slate-700 mb-3">3. Verified User</h4>
+                    <ul class="list-disc pl-4 text-sm text-slate-600 space-y-2 marker:text-emerald-500">
+                        <li>Inherits User permissions.</li>
+                        <li>Can restrict who comments on or sees their posts.</li>
+                        <li>Can create groups & publish exclusively to them.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-purple-600"></div>
+                    <h4 class="font-bold text-lg text-slate-700 mb-3">4. Administrator</h4>
+                    <ul class="list-disc pl-4 text-sm text-slate-600 space-y-2 marker:text-purple-600">
+                        <li><strong>Global Read:</strong> Can see <em>all</em> posts (public, private, group).</li>
+                        <li>Has all Verified User capabilities.</li>
+                        <li>Global moderation and role assignment.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">4</span>
+                Core Features
+            </h3>
+            <div class="bg-slate-50 rounded-xl border border-slate-200 p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-3">Post & Comment Creation</h4>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                Accessible to all roles, with varying permissions.</li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                <strong>Constraint:</strong> Posts are limited to Text OR Text + Images (Strict max: 4 images).</li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                <strong>Restrictions:</strong> Verified/Admins can toggle who can view or comment on specific posts.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-3">Live Interactions & Groups</h4>
+                        <ul class="space-y-2 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                <strong>Real-time:</strong> WebSockets power live comments and replies without page refresh.</li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                <strong>Groups:</strong> Created by Verified/Admins. Users must be explicitly added to see/participate in group posts.</li>
+                            <li class="flex items-start gap-2"><svg class="w-4 h-4 text-indigo-500 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 
+                                <strong>Visibility Rule:</strong> Standard users see public + their groups. Admins see everything globally.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-2">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">5</span>
+                5-Phase Development Plan
+            </h3>
+            
+            <div class="relative border-l-2 border-indigo-200 ml-4 space-y-10 pb-4">
+                
+                <!-- Phase 1 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white"></div>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-2">Phase 1: Planning & Architecture</h4>
+                    <p class="text-slate-600 mb-2">Define project scope, user stories, and architecture design.</p>
+                    <ul class="list-disc pl-5 text-sm text-slate-500">
+                        <li>Database schema design (Users, Roles, Posts, Comments, Groups, Media).</li>
+                        <li>API contract and endpoint documentation.</li>
+                        <li>UI/UX wireframing for the React SPA.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white"></div>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-2">Phase 2: Backend Development (Laravel API)</h4>
+                    <p class="text-slate-600 mb-2">Build out the core engine, authentication, and endpoints.</p>
+                    <ul class="list-disc pl-5 text-sm text-slate-500">
+                        <li>Implement Sanctum Auth and RBAC (Role-Based Access Control) middleware.</li>
+                        <li>CRUD operations for Posts, Comments, and Groups.</li>
+                        <li>Media upload logic (enforcing the 4-image limit).</li>
+                        <li>WebSocket configuration for live events.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white"></div>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-2">Phase 3: Frontend Development (React SPA)</h4>
+                    <p class="text-slate-600 mb-2">Develop the user interface with a strict focus on performance.</p>
+                    <ul class="list-disc pl-5 text-sm text-slate-500">
+                        <li>Implement responsive UI using Tailwind CSS.</li>
+                        <li><strong>Performance Focus:</strong> Emphasize robust state management (e.g., Zustand/Redux) and memoization to <em>minimize unnecessary re-renders</em> on live feed updates.</li>
+                        <li>Integrate WebSockets for real-time comment/reply injection.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white"></div>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-2">Phase 4: Testing & QA</h4>
+                    <p class="text-slate-600 mb-2">Ensure platform stability, security, and performance. (See detailed testing section below).</p>
+                </div>
+
+                <!-- Phase 5 -->
+                <div class="relative pl-8">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full ring-4 ring-white"></div>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-2">Phase 5: Deployment & Maintenance</h4>
+                    <p class="text-slate-600 mb-2">Launch the application and monitor post-deployment metrics.</p>
+                    <ul class="list-disc pl-5 text-sm text-slate-500">
+                        <li>CI/CD pipeline setup via GitHub Actions / GitLab CI.</li>
+                        <li>Server provisioning (Nginx, PHP-FPM, Node.js for sockets, DB).</li>
+                        <li>Post-launch monitoring and iterative patch deployments.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                <span class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">6</span>
+                Testing Requirements
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Unit & Integration -->
+                <div class="bg-white border border-slate-200 rounded-lg p-5">
+                    <h4 class="font-bold text-lg text-slate-800 mb-3 border-b pb-2">Unit & Integration Testing</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><strong>Unit (Backend):</strong> Use <code>PHPUnit</code> to test models, authorization policies, and image count validation logic.</li>
+                        <li><strong>Unit (Frontend):</strong> Use <code>Jest</code> / React Testing Library for isolated component testing (e.g., post renderer, comment form).</li>
+                        <li><strong>Integration:</strong> Test API endpoints end-to-end and ensure WebSockets correctly broadcast events across active sessions.</li>
+                    </ul>
+                </div>
+
+                <!-- E2E -->
+                <div class="bg-white border border-slate-200 rounded-lg p-5">
+                    <h4 class="font-bold text-lg text-slate-800 mb-3 border-b pb-2">End-to-End (E2E) Testing</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li>Use <code>Cypress</code> or <code>Playwright</code> to simulate complex user flows.</li>
+                        <li>Test critical paths: Guest posting, Admin restricting a post, User attempting to access a group they don't belong to.</li>
+                    </ul>
+                </div>
+
+                <!-- Performance -->
+                <div class="bg-white border border-slate-200 rounded-lg p-5">
+                    <h4 class="font-bold text-lg text-slate-800 mb-3 border-b pb-2">Performance Testing</h4>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><strong>Frontend:</strong> Utilize <em>React DevTools Profiling</em> to identify and eliminate wasteful component re-renders during high-volume live comment feeds.</li>
+                        <li><strong>Backend:</strong> DB Query optimization (e.g., Eager loading relationships in Laravel to prevent N+1 query problems).</li>
+                    </ul>
+                </div>
+
+                <!-- Security -->
+                <div class="bg-red-50 border border-red-100 rounded-lg p-5">
+                    <h4 class="font-bold text-lg text-red-800 mb-3 border-b border-red-200 pb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        Security Testing
+                    </h4>
+                    <ul class="space-y-3 text-sm text-red-700">
+                        <li><strong>Content Security Policy (CSP):</strong> Strict enforcement to prevent unauthorized script execution.</li>
+                        <li><strong>XSS Prevention:</strong> Rigorous sanitization of all text inputs in posts and comments.</li>
+                        <li><strong>RBAC Validation:</strong> Automated tests ensuring Users absolutely cannot spoof Admin/Verified roles or bypass group restrictions.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center text-slate-500 text-sm mt-12 pb-6 no-print">
+        Lets Discuss PRD v2.0 &bull; Generated Document
+    </footer>
+
+</body>
+</html>
