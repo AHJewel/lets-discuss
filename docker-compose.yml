@@ -3,7 +3,12 @@ name: lets-discuss
 x-php: &php
   build:
     context: ./docker/php
+    args:
+      HOST_UID: ${HOST_UID:-1000}
+      HOST_GID: ${HOST_GID:-1000}
   image: lets-discuss/php:8.4
+  # Same user everywhere so files created in storage/ share one owner
+  user: www-data
   working_dir: /var/www/html
   volumes:
     - ./lets-discuss-api:/var/www/html
